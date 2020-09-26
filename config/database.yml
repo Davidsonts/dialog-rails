@@ -13,20 +13,20 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
   socket: /tmp/mysql.sock
 
 development:
   <<: *default
-  database: dialog_rails_development
+  database: <%= ENV['DB_NAME'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: dialog_rails_test
+  database: <%= ENV['DB_NAME_TEST'] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: dialog_rails_production
-  username: dialog_rails
+  database: <%= ENV['DB_NAME_PRODUCTION'] %>
+  username: <%= ENV['DB_USERNAME_PRODUCTION'] %>
   password: <%= ENV['DIALOG_RAILS_DATABASE_PASSWORD'] %>
