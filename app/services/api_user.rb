@@ -1,6 +1,9 @@
 class ApiUser
   include HTTParty
-  base_uri 'http://localhost:8080'
+  require "dotenv"
+  Dotenv.load("../.env")
+  
+  base_uri "#{ENV['API_URL']}"
 
   def initialize
     @options = {}
