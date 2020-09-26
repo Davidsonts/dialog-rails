@@ -1,0 +1,22 @@
+<h1>Api Usuários</h1>
+
+<table>
+  <thead>
+    <td>Nome</td>
+    <td>Idade</td>
+    <td>Sexo</td>
+    <td>idade</td>
+    <td>uf</td>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user['nome'] %></td>
+        <td><%= user['idade'].to_time.strftime('%d/%m/%Y') %></td>
+        <td><%= user['sexo'] %></td>
+        <td><%= user['cidade'] %></td>
+        <td><%= user['uf'] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
