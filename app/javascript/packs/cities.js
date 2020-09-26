@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-  console.log( "ready!!!");
   $('#cidade').css('display', 'none');
   $('select#user_uf').change(function () {
     var input_state = $('select[name="user[cidade]"]'); //$(this);
