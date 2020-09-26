@@ -4,7 +4,7 @@
     <title>DialogRails</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,4 +12,23 @@
   <body>
     <%= yield %>
   </body>
+    <!-- AJAX to load "cidade" according to the selected state -->
+  <script>
+    $('#cidade').css('display', 'none');
+    $('select#user_uf').change(function () {
+      var input_state = $('select[name="user[cidade]"]'); //$(this);
+      $.getJSON('/cities/' + $(this).val(), function (data) {
+        console.log(1, data)
+        $('#cidade').css('display', 'block');
+        $('.cidade-input').css('display', 'none');
+        
+        input_state.empty();
+      
+        $.each(data, function (i, value) {
+          var opt = '<option value="'+ value +'">' +  value + '</option>';
+          input_state.append(opt);
+        });
+      });
+    });
+  </script>
 </html>
