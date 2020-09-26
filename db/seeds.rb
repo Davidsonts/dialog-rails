@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+100.times do 
+  uf = CS.states(:br).map do |key, value| key end
+  uf = uf.sample
+  User.create(
+    nome: Faker::Name.name, 
+    idade: Faker::Date.between(from: '1080-01-23', to: '2000-01-25'),
+    sexo: [:masculino, :feminino, :outro].sample, 
+    cidade: CS.cities(uf, :br).sample, 
+    uf: uf
+  )
+end
