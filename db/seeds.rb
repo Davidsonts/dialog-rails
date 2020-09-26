@@ -10,7 +10,7 @@
   uf = uf.sample
   User.create(
     nome: Faker::Name.name, 
-    idade: Faker::Date.between(from: '1080-01-23', to: '2000-01-25'),
+    idade: Faker::Date.between(from: '1980-01-23', to: '2000-01-25'),
     sexo: [:masculino, :feminino, :outro].sample, 
     cidade: CS.cities(uf, :br).sample, 
     uf: uf
