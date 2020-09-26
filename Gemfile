@@ -29,6 +29,8 @@ gem 'city-state'
 gem 'faker'
 gem 'httparty'
 gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
+gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

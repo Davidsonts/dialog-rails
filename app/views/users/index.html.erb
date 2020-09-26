@@ -2,7 +2,7 @@
 
 <h1>Users</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Nome</th>
@@ -31,6 +31,9 @@
 </table>
 
 <br>
-<%= will_paginate @users %>
+
+<nav aria-label="Page navigation example">
+  <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+</nav>
 
 <%= link_to 'New User', new_user_path %>
