@@ -11,36 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :nome %>
-    <%= form.text_field :nome %>
+    <%= form.text_field :nome, :required => true, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :idade %>
-    <%= form.date_select :idade %>
+    <%= form.date_field :idade, as: :date, value: form.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :sexo %>
-    <%= form.select(:sexo, options_for_select([:masculino, :feminino, :outro], selected: @user.sexo), prompt: "Selecione") %>
+    <%# < %= form.select(:sexo, options_for_select([:masculino, :feminino, :outro], selected: @user.sexo), prompt: "Selecione", required: true, class: "form-control") % > %>
+    <%= form.select(:sexo, [:masculino, :feminino, :outro], {:include_blank => 'Selecione'}, { :class => 'form-control' }) %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :uf %>
-    <%= form.select(:uf, options_for_select(CS.states(:br).map{|key, value| key}, selected: @user.uf), prompt: "UF") %>
-  </div>
+    <%# < %= form.select(:uf, options_for_select(CS.states(:br).map{|key, value| key}, selected: @user.uf), prompt: "UF") % > %>
+    <%= form.select(:uf, CS.states(:br).map{|key, value| key}, {:include_blank => 'UF'}, { :class => 'form-control' }) %>
+  </div> 
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :cidade %>
-    <%= form.text_field :cidade, class: "cidade-input", :disabled => true %> 
-    <select name="user[cidade]" id="cidade">
+    <%= form.text_field :cidade, class: "cidade-input form-control", :disabled => true %> 
+    <select name="user[cidade]" id="cidade" class="form-control">
     </select>
   </div>
 
   <%# < %= form.select(:uf, options_for_select(CS.cities(@user.uf, :br).map{|key, value| key}, selected: @user.cidade), prompt: "Please Select cidade") % > %>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions form-group">
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
