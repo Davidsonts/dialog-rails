@@ -21,6 +21,4 @@
   </tbody>
 </table>
 
-<br>
-
-<%= will_paginate @users %>
+<%= will_paginate @users, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
