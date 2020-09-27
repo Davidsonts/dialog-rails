@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>Usuários</h1>
 
 <table class="table">
   <thead>
@@ -30,10 +30,5 @@
   </tbody>
 </table>
 
-<br>
+<%= will_paginate @users, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 
-<nav aria-label="Page navigation example">
-  <%= will_paginate @users, renderer: BootstrapPagination::Rails %>
-</nav>
-
-<%= link_to 'New User', new_user_path %>
