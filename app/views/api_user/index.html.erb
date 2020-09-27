@@ -13,7 +13,7 @@
       <tr>
         <td><%= user['nome'] %></td>
         <td><%= user['idade'].to_time.strftime('%d/%m/%Y') %></td>
-        <td><%= user['sexo'] %></td>
+        <td><%=  [0 => :Masculino, 1 => :Feminino,  2 => :Outros].map{|key, hash| key[user['sexo']] }.join(',') %></td>
         <td><%= user['cidade'] %></td>
         <td><%= user['uf'] %></td>
       </tr>
