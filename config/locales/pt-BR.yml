@@ -81,6 +81,7 @@ pt-BR:
                 blank: "não pode ser nula."
               uf:
                 blank: "não pode ser nulo."
+                invalid: "inexistente."
               cidade:
                 blank: "não pode ser nulo."
                 invalid: "inexistente."
