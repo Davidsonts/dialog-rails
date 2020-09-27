@@ -1,8 +1,9 @@
 class User < ApplicationRecord
-  validates :mome, acceptance: true
-  validates :idade, acceptance: true
-  validates :sexo, acceptance: true
-  validates :uf, acceptance: true
+  validates :nome, :presence => true
+  validates :idade, :presence => true
+  validates :sexo, :presence => true
+  validates :uf, :presence => true
+  validates :cidade, :presence => true
 
   uf = CS.states(:br).map do |key, value| key end
   enum uf: uf
