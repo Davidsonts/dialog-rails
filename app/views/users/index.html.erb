@@ -18,7 +18,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.nome %></td>
-        <td><%= user.idade %></td>
+        <td><%= user.idade.to_time.strftime('%d/%m/%Y') %></td>
         <td><%= user.sexo %></td>
         <td><%= user.cidade %></td>
         <td><%= user.uf %></td>
