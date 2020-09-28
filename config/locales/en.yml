@@ -31,3 +31,5 @@
 
 en:
   hello: "Hello world"
+  error:
+    msm:  'prohibited this user from being saved:'

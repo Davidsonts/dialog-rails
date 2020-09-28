@@ -85,3 +85,5 @@ pt-BR:
               cidade:
                 blank: "não pode ser nulo."
                 invalid: "inexistente."
+  error:
+    msm:  'proibiu este usuário de ser salvo'              
