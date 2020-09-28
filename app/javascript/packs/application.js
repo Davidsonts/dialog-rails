@@ -9,9 +9,10 @@ require("channels")
 require("packs/cities")
 require("packs/menu_toggle")
 
-import "bootstrap";
+import "bootstrap"
 import "../stylesheets/application"  // <- Add this line
- 
+import "@fortawesome/fontawesome-free/js/all"
+
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()

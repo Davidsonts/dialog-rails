@@ -84,8 +84,8 @@ GEM
     faker (2.14.0)
       i18n (>= 1.6, < 2)
     ffi (1.13.1)
-    flatpickr_rails (1.1.0)
-      railties (>= 3.0)
+    font_awesome5_rails (1.2.0)
+      railties (>= 4.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     httparty (0.18.1)
@@ -228,7 +228,7 @@ DEPENDENCIES
   city-state
   dotenv-rails
   faker
-  flatpickr_rails
+  font_awesome5_rails
   httparty
   jbuilder (~> 2.7)
   jquery-rails

@@ -52,21 +52,17 @@ pt-BR:
     - :day
     - :month
     - :year
-  
   actions:
     show: Exibir
     edit: Editar
     destroy: Excluir
     new: Novo
     back: Voltar
-  
   helpers:
     submit:
       create: "Criar %{model}"
       update: "Alterar %{model}"
-
-  confirm: Você tem certeza?
-  
+  confirm: "Você tem certeza?"
   activerecord:
       errors:
         models:
@@ -86,4 +82,4 @@ pt-BR:
                 blank: "não pode ser nulo."
                 invalid: "inexistente."
   error:
-    msm:  'proibiu este usuário de ser salvo'              
+    msm: 'proibiu este usuário de ser salvo'

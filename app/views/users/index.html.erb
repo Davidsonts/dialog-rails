@@ -22,9 +22,9 @@
         <td><%= user.sexo %></td>
         <td><%= user.cidade %></td>
         <td><%= user.uf %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to fa_icon("eye"), user, class: 'text-warning' %></td>
+        <td><%= link_to fa_icon("edit"), edit_user_path(user), class: 'text-info' %></td>
+        <td><%= link_to fa_icon("trash-alt"), user, class: 'text-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

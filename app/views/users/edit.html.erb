@@ -2,5 +2,5 @@
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to fa_icon("eye"), @user, class: 'text-warning' %> |
+<%= link_to fa_icon("arrow-left"), users_path, class: 'text-secondary' %>
