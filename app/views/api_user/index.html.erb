@@ -2,20 +2,20 @@
 
 <table class="table">
   <thead>
-    <td>Nome</td>
-    <td>Idade</td>
-    <td>Sexo</td>
-    <td>idade</td>
-    <td>uf</td>
+    <th>Nome</th>
+    <th>Idade</th>
+    <th>Sexo</th>
+    <th>Cidade</th>
+    <th>Uf</th>
   </thead>
   <tbody>
     <% @users.each do |user| %>
-      <tr>
+        <tr> 
         <td><%= user['nome'] %></td>
         <td><%= user['idade'].to_time.strftime('%d/%m/%Y') %></td>
         <td><%=  [0 => :Masculino, 1 => :Feminino,  2 => :Outros].map{|key, hash| key[user['sexo']] }.join(',') %></td>
         <td><%= user['cidade'] %></td>
-        <td><%= user['uf'] %></td>
+        <td><%= CS.states(:br).map{|key, hash| key }.to_a[user['uf']] %></td>
       </tr>
     <% end %>
   </tbody>
